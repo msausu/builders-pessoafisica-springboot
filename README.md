@@ -37,6 +37,6 @@ or
 
 ## Postman testing
 
-bash run-postman-tests.sh`
+`bash run-postman-tests.sh`
 
 ![Postman tests](doc/postman-pessoa-fisica.gif)
