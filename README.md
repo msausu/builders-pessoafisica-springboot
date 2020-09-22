@@ -39,4 +39,4 @@ or
 
 bash run-postman-tests.sh`
 
-![Postman tests] (doc/postman-pessoa-fisica.gif)
+![Postman tests](doc/postman-pessoa-fisica.gif)
