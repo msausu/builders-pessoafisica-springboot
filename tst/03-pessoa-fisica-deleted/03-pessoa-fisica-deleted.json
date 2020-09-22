@@ -1,0 +1,1 @@
+{"info":{"name":"REST Docs to Postman","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},"item":[{"name":"generated-snippets","item":[{"name":"api/1","request":{"method":"DELETE","header":[],"body":null,"url":{"raw":"http://localhost:8080/api/1","host":["http://localhost:8080"],"path":["","api","1"]}}}]}]}

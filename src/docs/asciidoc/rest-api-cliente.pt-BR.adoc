@@ -1,0 +1,120 @@
+
+= Pessoa Física REST API
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
+
+[[specs]]
+== Requisitos
+
+1. API REST com CRUD de Cliente (id, nome, cpf, dataNascimento). O CRUD deve possuir uma api de GET, POST, DELETE, PATCH e PUT.
+2. A api de GET deve aceitar "query strings" para pesquisar os clientes por CPF e nome. Também é necessário que nessa api os clientes voltem paginados e que possua um campo por cliente com a idade calculado dele considerando a data de nascimento.
+
+[[obs]]
+== Observações
+
+1. A idade é um atributo calculado para a Pessoa Física, por isso não necessita fazer parte da criação da entidade.
+2. A pontuação do CPF é opcional nas consultas, porém deve sempre possuir 11 algarismos (zeros a esquerda). A pontuação é sempre introduzida nas repostas.
+3. A exclusão/alteração baseia-se no Id da Pessoa Física.
+4. Qualquer atributo da Pessoa Física pode ser alterado exceto a idade (que é calculada a partir da data de nascimento).
+5. Os nomes das pessoas podem ter entre 2 e 50 caracteres -- alfabéticos -- contando os espaços.
+6. A idade máxima de uma pessoa é 120 anos (contando da data atual) e a mínima zero.
+7. A API retorna informações em formato JSON.
+
+[[verbos]]
+== verbos HTTP 
+
+Verbos HTTP que correspondem às ações CRUD sobre Clientes.
+
+|===
+| Verbo | Uso
+
+| `GET`
+| (READ) Usado para obter Pessoas Físicas (id, nome ou CPF).
+
+| `POST`
+| (CREATE) Usado para criar uma Pessoa Física.
+
+| `PUT`
+| (UPDATE) Usado para alerar/corrigir uma Pessoa Física.
+
+| `PATCH`
+| (UPDATE) Usado para alerar/corrigir uma Pessoa Física.
+
+| `DELETE`
+| (DELETE) Usado para excluir uma Pessoa Física.
+|===
+
+[[recursos]]
+= Recursos
+
+Pessoa Física (id, cpf, nome, dataNascimento, idade)
+
+Base da API `/api`
+
+[[pessoa-fisica]]
+== Criando uma Pessoa Fisica
+
+.request
+include::{snippets}/00-pessoa-fisica-created/http-request.adoc[]
+
+.response
+include::{snippets}/00-pessoa-fisica-created/http-response.adoc[]
+
+== Buscando uma Pessoa Fisica por CPF
+
+Não há encapsulamento do objeto (Pessoa Física) pois há uma única instância por CPF.
+
+.request
+include::{snippets}/01-pessoa-fisica-search-by-cpf/http-request.adoc[]
+
+.response
+include::{snippets}/01-pessoa-fisica-search-by-cpf/http-response.adoc[]
+
+== Buscando uma Pessoa Fisica por Nome
+
+A resposta encontra-se encapsulada em _embedded.PESSOA_FISICA pois podem haver homônimos.
+
+.request
+include::{snippets}/02-pessoa-fisica-search-by-nome/http-request.adoc[]
+
+.response
+include::{snippets}/02-pessoa-fisica-search-by-nome/http-response.adoc[]
+
+== Buscando várias Pessoas Fisicas de uma vez
+
+1. A pesquisa pode ser ordenada (sort) e paginada (page) a partir de um tamanho (sort)
+2. A resposta encontra-se encapsulada em _embedded.PESSOA_FISICA.
+
+.request
+include::{snippets}/14-pessoa-fisica-paged-request/http-request.adoc[]
+
+.response
+include::{snippets}/14-pessoa-fisica-paged-request/http-response.adoc[]
+
+== Alterando uma Pessoa Fisica (por Id) via PUT
+
+.request
+include::{snippets}/06-pessoa-fisica-modified/http-request.adoc[]
+
+.response
+include::{snippets}/06-pessoa-fisica-modified/http-response.adoc[]
+
+== Alterando uma Pessoa Fisica (por Id) via PATCH
+
+.request
+include::{snippets}/08-pessoa-fisica-modified/http-request.adoc[]
+
+.response
+include::{snippets}/08-pessoa-fisica-modified/http-response.adoc[]
+
+== Excluindo uma Pessoa Fisica (por Id)
+
+.request
+include::{snippets}/03-pessoa-fisica-deleted/http-request.adoc[]
+
+.response
+include::{snippets}/03-pessoa-fisica-deleted/http-response.adoc[]

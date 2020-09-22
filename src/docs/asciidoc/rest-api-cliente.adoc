@@ -1,0 +1,119 @@
+= Individual REST API
+: doctype: book
+: icons: font
+: source-highlighter: highlightjs
+: toc: left
+: toclevels: 3
+: sectlinks:
+
+[[specs]]
+== Requirements
+
+1. REST API with Pessoa Física/Client CRUD (id, name, cpf, birthDate). CRUD must have a GET, POST, DELETE, PATCH and PUT api.
+2. The GET api must accept "query strings" to search for customers by CPF and name. It is also necessary that in this api the clients return paginated and that they have a field per client with the calculated age of him considering the date of birth.
+
+[[obs]]
+== Observations
+
+1. Age is an attribute calculated for the Individual, so it does not need to be part of the creation of the entity.
+2. The CPF score is optional in consultations, however it must always have 11 digits (leading zeros). The punctuation is always introduced in the answers.
+3. The exclusion / change is based on the Individual's Id.
+4. Any attribute of the Individual can be changed except for age (which is calculated from the date of birth).
+5. People's names can be between 2 and 50 characters - alphabetic - counting the spaces.
+6. The maximum age for a person is 120 years old (counting from the current date) and the minimum is zero.
+7. The API returns information in JSON format.
+
+[[verbs]]
+== HTTP verbs
+
+HTTP verbs that correspond to CRUD actions on Clients.
+
+| ===
+| Verb | Use
+
+| `GET`
+| (READ) Used to obtain Individuals (id, name or CPF).
+
+| `POST`
+| (CREATE) Used to create an Individual.
+
+| `PUT`
+| (UPDATE) Used to correct an Individual.
+
+| `PATCH`
+| (UPDATE) Used to correct an Individual.
+
+| `DELETE`
+| (DELETE) Used to delete an Individual.
+| ===
+
+[[resources]]
+== Resources
+
+Individual (id, cpf, name, dateBirth, age)
+
+Base of the `/api` API
+
+[[person]]
+== Creating an Individual
+
+.request
+include::{snippets}/00-pessoa-fisica-created/http-request.adoc[]
+
+.response
+include::{snippets}/00-pessoa-fisica-created/http-response.adoc[]
+
+== Searching for an Individual by CPF
+
+There is no encapsulation of the object (Individual) as there is a single instance per CPF.
+
+.request
+include::{snippets}/01-pessoa-fisica-search-by-cpf/http-request.adoc[]
+
+.response
+include::{snippets}/01-pessoa-fisica-search-by-cpf/http-response.adoc[]
+
+== Searching for an Individual by Name
+
+The answer is encapsulated in _embedded.PESSOA_FISICA as there may be homonyms.
+
+.request
+include::{snippets}/02-pessoa-fisica-search-by-nome/http-request.adoc[]
+
+.response
+include::{snippets}/02-pessoa-fisica-search-by-nome/http-response.adoc[]
+
+== Searching for multiple Individuals at once
+
+1. The search can be ordered (sort) and paged (page) from a size (sort)
+2. The answer is encapsulated in _embedded.PESSOA_FISICA.
+
+.request
+include::{snippets}/14-pessoa-fisica-paged-request/http-request.adoc[]
+
+.response
+include::{snippets}/14-pessoa-fisica-paged-request/http-response.adoc[]
+
+== Changing an Individual (by Id) via PUT
+
+.request
+include::{snippets}/06-pessoa-fisica-modified/http-request.adoc[]
+
+.response
+include::{snippets}/06-pessoa-fisica-modified/http-response.adoc[]
+
+== Changing an Individual (by Id) via PATCH
+
+.request
+include::{snippets}/08-pessoa-fisica-modified/http-request.adoc[]
+
+.response
+include::{snippets}/08-pessoa-fisica-modified/http-response.adoc[]
+
+== Excluding an Individual (by Id)
+
+.request
+include::{snippets}/03-pessoa-fisica-deleted/http-request.adoc[]
+
+.response
+include::{snippets}/03-pessoa-fisica-deleted/http-response.adoc[]

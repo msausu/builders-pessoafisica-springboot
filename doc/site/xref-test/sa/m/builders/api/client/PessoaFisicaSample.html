@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>PessoaFisicaSample xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../testapidocs/sa/m/builders/api/client/PessoaFisicaSample.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <strong class="jxr_keyword">package</strong> sa.m.builders.api.client;
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> sa.m.builders.api.client.model.CPF;
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> sa.m.builders.api.client.model.PessoaFisica;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> java.util.Calendar;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> java.util.TimeZone;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_javadoccomment"> * @author msa</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">public</strong> enum <a name="PessoaFisicaSample" href="../../../../../sa/m/builders/api/client/PessoaFisicaSample.html#PessoaFisicaSample">PessoaFisicaSample</a> {
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>      PEDRO(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"74427647545"</span>), <span class="jxr_string">"Pedro"</span>, cal(2012, 1, 1))),
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>      PEDRO_ALVARES(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"42578844100"</span>), <span class="jxr_string">"Pedro Álvares"</span>, cal(2001, 1, 27))),
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>      ANDRE_DAS_NEVES(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"77635188712"</span>), <span class="jxr_string">"André das Neves"</span>, cal(2013, 5, 31))),
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>      RICARDO_MAGNO_SOBRINHO(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"28138459816"</span>), <span class="jxr_string">"Ricardo Magno Sobrinho"</span>, cal(1987, 6, 17))),
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>      CARLOS_X_1(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"83332945963"</span>), <span class="jxr_string">"Carlos X"</span>, cal(2008, 2, 15))),
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>      CARLOS_X_2(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"42651664154"</span>), <span class="jxr_string">"Carlos X"</span>, cal(2010, 3, 22))), <em class="jxr_comment">// HOMÔNIMO</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>      REGINA(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"854.189.671-42"</span>), <span class="jxr_string">"Regina"</span>, cal(2010, 3, 22))),
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>      ALBERTO(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"437.853.919-51"</span>), <span class="jxr_string">"Alberto"</span>, cal(1975, 2, 3))),
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>      XAVIER(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"478.447.743-80"</span>), <span class="jxr_string">"Xavier"</span>, cal(2012, 1, 1))),
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>      ROBERTO(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"495.683.242-75"</span>), <span class="jxr_string">"Roberto"</span>, cal(2001, 1, 27))),
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>      ADRIANA(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"623.692.659-06"</span>), <span class="jxr_string">"Adriana"</span>, cal(2013, 5, 31))),
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>      CAROL(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"817.238.162-05"</span>), <span class="jxr_string">"Carol"</span>, cal(1987, 6, 17))),
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>      JOANA(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"853.283.834-00"</span>), <span class="jxr_string">"Joana"</span>, cal(1970, 5, 4))),
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>      AUGUSTO(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"684.792.573-69"</span>), <span class="jxr_string">"Augusto"</span>, cal(1898, 12, 30))), <em class="jxr_comment">// TOO OLD</em>
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>      NAME_BAD_1(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"981.673.254-82"</span>), <span class="jxr_string">"F00"</span>, cal(2001, 1, 27))), <em class="jxr_comment">// BAD NAME INVALID CHAR</em>
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>      NAME_BAD_2(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"441.312.992-08"</span>), <span class="jxr_string">"R"</span>, cal(2001, 1, 27))), <em class="jxr_comment">// BAD NAME TOO SHORT</em>
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>      NAME_BAD_3(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"944.582.080-04"</span>), <span class="jxr_string">"Kaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"</span>, cal(2013, 05, 31))), <em class="jxr_comment">// BAD NAME TOO LONG</em>
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>      TADEU(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"581.189.150-42"</span>), <span class="jxr_string">"Tadeu"</span>, cal(1898, 12, 30))), <em class="jxr_comment">// TOO OLD</em>
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>      TAMARA(<strong class="jxr_keyword">new</strong> PessoaFisica(<strong class="jxr_keyword">new</strong> CPF(<span class="jxr_string">"241.111.593-89"</span>), <span class="jxr_string">"Tamara"</span>, Calendar.getInstance()))
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>      ;
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Calendar cal(<strong class="jxr_keyword">int</strong> year, <strong class="jxr_keyword">int</strong> month, <strong class="jxr_keyword">int</strong> day) {
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>          Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>          cal.set(Calendar.YEAR, year);
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>          cal.set(Calendar.MONTH, month);
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>          cal.set(Calendar.DAY_OF_MONTH, day);
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>          <strong class="jxr_keyword">return</strong> cal;
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>      }
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> PessoaFisica pessoa;
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      <strong class="jxr_keyword">private</strong> <a name="PessoaFisicaSample" href="../../../../../sa/m/builders/api/client/PessoaFisicaSample.html#PessoaFisicaSample">PessoaFisicaSample</a>(PessoaFisica pessoa) {
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>          <strong class="jxr_keyword">this</strong>.pessoa = pessoa;
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      }
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>      
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>      <strong class="jxr_keyword">public</strong> PessoaFisica instance() {
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>          <strong class="jxr_keyword">return</strong> pessoa.copy();
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>      }
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>      
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>      <strong class="jxr_keyword">public</strong> String nome() {
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>          <strong class="jxr_keyword">return</strong> pessoa.getNome();
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>      }
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>      
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>      <strong class="jxr_keyword">public</strong> String cpf() {
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>          <strong class="jxr_keyword">return</strong> pessoa.getCpf();
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>      }
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>      
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>      <strong class="jxr_keyword">public</strong> Calendar dataNascimento() {
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>          <strong class="jxr_keyword">return</strong> pessoa.getDataNascimento();
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>      }
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>       
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> idade() {
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>          <strong class="jxr_keyword">return</strong> pessoa.getIdade();
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>      }
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>      
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2020. All rights reserved.</div>
+</body>
+</html>
