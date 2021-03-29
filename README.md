@@ -1,7 +1,5 @@
 # builders-pessoafisica-springboot
-Very simple API for brazilian individuals
-
-** spec **
+very simple API for brazilian individuals
 
 1. Java Spring Boot project (using necessary modules):
   - REST API;
