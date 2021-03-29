@@ -1,4 +1,4 @@
-# builders-pessoafisica-spingboot
+# builders-pessoafisica-springboot
 Very simple API for brazilian individuals
 
 ** spec **
